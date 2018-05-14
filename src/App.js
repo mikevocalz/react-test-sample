@@ -1,27 +1,38 @@
-import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import React, { Component, Fragment } from "react";
+import { Route, Switch, Link } from "react-router-dom";
 
 import headerLogo from "./assets/staff-logo.png";
+
 import "./App.css";
-import StaffList from "./components/StaffList";
-import Employee from "./components/employee";
+import StaffDirectory from "./components/StaffDirectory";
+import notfound from "./components/notfound";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
-      <BrowserRouter>
+      <Fragment>
         <div className="App">
           <header className="App-header">
-            <img src={headerLogo} className="App-logo" alt="logo" />
+            <Link to="/products">
+              <img src={headerLogo} className="App-logo" alt="logo" />
+            </Link>
           </header>
           <p className="staff-directions">
-            Click on a staff member to view details
+            Click on "Staff Directory" to View Details
           </p>
-
-          <Route exact path="/" component={StaffList} />
-          <Route exact path="/data:id" component={Employee} />
+          <hr />
+          <Switch>
+            <Route exact path="/" render={props => <div> </div>} />
+            <Route path="/products" component={StaffDirectory} />
+            <Route path="*" component={notfound} />
+          </Switch>
         </div>
-      </BrowserRouter>
+      </Fragment>
     );
   }
 }
