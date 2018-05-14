@@ -14,11 +14,10 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <Fragment>
+    return <Fragment>
         <div className="App">
           <header className="App-header">
-            <Link to="/products">
+            <Link to="/directory">
               <img src={headerLogo} className="App-logo" alt="logo" />
             </Link>
           </header>
@@ -28,12 +27,11 @@ class App extends Component {
           <hr />
           <Switch>
             <Route exact path="/" render={props => <div> </div>} />
-            <Route path="/products" component={StaffDirectory} />
+            <Route path="/directory" component={StaffDirectory} />
             <Route path="*" component={notfound} />
           </Switch>
         </div>
-      </Fragment>
-    );
+      </Fragment>;
   }
 }
 
