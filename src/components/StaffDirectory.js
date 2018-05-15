@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { Link, Route } from "react-router-dom";
-import Employee from "./Employee";
 
 //UI
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";

@@ -5,8 +5,8 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Paper from "material-ui/Paper";
 
 const EmployeeView = ({ match, data }) => {
-  var employee = data.find(employee => employee.id === Number(match.params.id));
-  var workerData;
+  const employee = data.find(employee => employee.id === Number(match.params.id));
+  let workerData;
 
   if (employee)
     workerData = (
